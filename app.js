@@ -1,16 +1,16 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var app = express();
+app.set('view engine', 'ejs');
 
-const PORT=8080; 
+var port = process.env.PORT || 8080;
 
-fs.readFile('./index.html', function (err, html) {
-
-    if (err) throw err;
-
-    http.createServer(function(request, response) {
-        response.writeHeader(200, {"Content-Type": "text/html"});
-        response.write(html);
-        response.end();
-    }).listen(PORT);
+app.get('/', function(req, res) {
+    res.render('index');
+});
+app.get('/toc', function(req, res) {
+    res.render('toc');
 });
 
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
