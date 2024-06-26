@@ -1,6 +1,8 @@
 {   "name": "APP",
     "build": {"dockerfile": "../Dockerfile"},
-    "forwardPorts": [8080]
+    "appPort": [8080],
+    "forwardPorts": [8080],
+    "postStartCommand": "node app.js"
 }
 
 
