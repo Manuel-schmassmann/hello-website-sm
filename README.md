@@ -1,5 +1,4 @@
-Der Container docker-2048 wird duch das Dockfile auf das Github von dem Ersteller geschickt. Danach wird mithilfe des devcontainers folgendes Js File geöffnet: game_manager.js. Mithilfe des Dockerfile wird dann noch der Container erstelle.
-
+Mit localhost:8080 kommen Sie auf die Webseite. Dort finden Sie Hello World und ein paar features
 [
     ![Open in Remote - Containers](
         https://xebia.com/wp-content/uploads/2023/11/v1.svg    )
