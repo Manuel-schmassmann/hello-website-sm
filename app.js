@@ -1,14 +1,17 @@
 var express = require('express');
 var app = express();
 app.set('view engine', 'ejs');
+const path = require('path');
 
 var port = process.env.PORT || 8080;
 
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'webpages')));
+
+
 app.get('/', function(req, res) {
-    res.render('index');
-});
-app.get('/toc', function(req, res) {
-    res.render('toc');
+    res.sendFile(__dirname + '/webpages/index.html');
 });
 
 app.listen(port, function() {
